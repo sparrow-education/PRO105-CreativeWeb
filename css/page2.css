@@ -1,0 +1,416 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+}
+
+.main-wrapper{
+    position: relative;
+    border: 10px solid whitesmoke;
+    height: 100vh;
+}
+
+.backgroundImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(#ed972d,#4eb23f);
+    animation-name: animatebg;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    background-size: 500% 500%;
+}
+@keyframes animatebg{
+    0%{background-position:66% 0%}
+    50%{background-position:25% 100%}
+    100%{background-position:66% 0%}
+}
+
+/* NAV buttons */
+.up{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 4.5%;
+    height: 10%;
+    z-index: 99;
+}
+.down{
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    width: 4.5%;
+    height: 10%;
+    z-index: 99;
+}
+
+/* ~~~ interactive container below ~~~ */
+.interactive-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: navy 5px solid;
+}
+.staticHouse{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.yellow{
+    z-index: 9;
+    left: 5%;
+    bottom: 15%;
+    height: 70%;
+    width: 43%;
+}
+.pink{
+    z-index: 1;
+    left: 25%;
+    bottom: 45%;
+    height: 55%;
+    width: 27.5%;
+}
+.orange{
+    z-index: 7;
+    left: 48%;
+    bottom: 45%;
+    height: 68%;
+    width: 38%;
+}
+.blue{
+    z-index: 15;
+    left: 55%;
+    bottom: -5%;
+    height: 70%;
+    width: 35%;
+}
+.silver{
+    z-index: 15;
+    left: 85%;
+    bottom: 10%;
+    height: 80%;
+    width: 40%;
+}
+
+#road{
+    position: absolute;
+    left: 55%;
+    top: -1%;
+    right: -1%;
+    bottom: 0%;
+    height: 105%;
+    width: 40%;
+    transform: skewX(-60deg);
+}
+
+#playSpiderman{
+    z-index: 8;
+    position: absolute;
+    left: 64.6%;
+    bottom: 93%;
+    height: 1%;
+    width: 1%;
+    transform: skewX(-5deg) skewY(-160deg) rotateY(-10deg);
+    cursor: help;
+}
+#playSpiderman:checked ~ .DCComics {
+    animation-play-state: running;
+}
+#spiderLogo{
+    z-index: 7;
+    position: absolute;
+    left: 62%;
+    bottom: 85%;
+    height: 14%;
+    width: 6%;
+    cursor: help;
+    transform: skewX(-5deg) skewY(-160deg) rotateY(-10deg);
+}
+#spiderWeb{
+    z-index: 5;
+    position: absolute;
+    top: -200%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation-name: webDropDown;
+    animation-delay: 800ms;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+@keyframes webDropDown{
+    0% {
+        top: -200%;
+    } 99% {
+        top: 50%;
+        transform: scale(2,2);
+    } 100% {
+        display: none;
+    }
+}
+#spiderMan{
+    z-index: 99;
+    position: absolute;
+    height: 15%;
+    left: 50%;
+    top: -15%;
+    animation-name: spiderParkour;
+    animation-delay: 4s;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-play-state: paused;
+}
+@keyframes spiderParkour {
+    0% {
+        
+    } 50% {
+        top: 10%;
+        left: 30%;
+        transform: scale(4,4);
+    } 75% {
+        top: 45%;
+        left: 10%;
+        transform: scale(6,6);
+    } 99% {
+        top: 25%;
+        left: 60%;
+        transform: scale(10,10);
+    } 100% {
+        display: none;
+    }
+}
+
+#playEnterTheBus{
+    z-index: 17;
+    position: absolute;
+    bottom: 41%;
+    left: 14.4%;
+    height: 3%;
+    width: 3%;
+    transform: skew(15deg) rotate(19deg);
+    cursor: help;
+}
+#playEnterTheBus:checked ~ .chainAnime{
+    animation-play-state: running;
+}
+#hogwarts{
+    z-index: 16;
+    position: absolute;
+    bottom: 35%;
+    left: 12%;
+    height: 15%;
+    width: 8%;
+    transform: skew(15deg) rotate(19deg);
+}
+#oleKirk{
+    z-index: 10;
+    position: absolute;
+    left: 30%;
+    bottom: 20%;
+    height: 15%;
+    width: 8%;
+    cursor: help;
+    animation-name: enterTheBus;
+    animation-duration: 500ms;
+    animation-delay: 6500ms;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+@keyframes enterTheBus{
+    0% {
+        opacity: 1;
+    } 100% {
+        opacity: 0;
+        z-index: 0;
+    }
+}
+#harryPotterBus{
+    position: absolute;
+    left: 105%;
+    bottom: 70%;
+    right: 0;
+    height: 35%;
+    width: 20%;
+    z-index: 12;
+    animation-name: busAnimationStart, busAnimationEngine, busAnimationEnd;
+    animation-timing-function: ease-in-out, linear, ease-in;
+    animation-duration: 5s, 150ms, 5s; 
+    animation-delay: 1s, 7s, 9s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1, 20, 1;  
+    animation-play-state: paused; 
+}
+@keyframes busAnimationStart{
+    0%{
+
+    } 100% {
+        left: 30%;
+        bottom: 10%;
+    }
+}
+@keyframes busAnimationEngine{
+    0% {
+        bottom: 10%;
+    } 50% {
+        bottom: 10.2%;
+        transform: rotate(0.1deg);
+    } 100% {
+        bottom: 10%;
+    }
+}
+@keyframes busAnimationEnd{
+    0% {
+        bottom: 10%;
+    } 100% {
+        left: -100%;
+        bottom: -100%;
+    }
+}
+
+#playCallForDuty{
+    z-index: 19;
+    position: absolute;
+    height: 1%;
+    width: 1%;
+    left: 62.5%;
+    bottom: 37%;
+    transform: skewX(-5deg) skewY(-160deg) rotateY(-15deg);
+    cursor: help;
+}
+#playCallForDuty:checked ~ .empireStrikes{
+    animation-play-state: running;
+}
+#deathStar{
+    z-index: 18;
+    position: absolute;
+    left: 59%;
+    bottom: 25%;
+    height: 20%;
+    width: 12%;
+    transform: skewX(-5deg) skewY(-160deg) rotateY(-15deg);
+}
+#empireFalcon{
+    z-index: 10;
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    height: 25%;
+    width: 28%;
+    cursor: help;
+    animation-name: engageEngine,callForDuty;
+    animation-duration: 300ms,10s;
+    animation-fill-mode: forwards;
+    animation-delay: 100ms, 3s;
+    animation-iteration-count: 20,1;
+    animation-timing-function: linear,ease-in-out;
+    animation-play-state: paused;
+}
+@keyframes engageEngine{
+    0% {
+        left: 10%;
+    } 50% {
+        left: 10.02%;
+    } 100% {
+        left: 10%;
+    }
+}
+@keyframes callForDuty{
+    0% {
+        
+    } 25% {
+        top: 2%;
+        left: 10%;
+        transform: rotate(0deg);
+    } 100%{
+        top: -15%;  
+        left: 100%;
+        transform: rotate(-25deg);
+    }
+}
+#kittyCat{
+    position: absolute;
+    z-index: 11;
+    height: 10%;
+    width: 3.5%;
+    left: 26%;
+    bottom: 45%;
+    animation-name: freeFall;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+}
+@keyframes freeFall {
+    0%{
+
+    } 100% {
+        bottom: 30%;
+        opacity: 0;
+    }
+}
+
+.chatContainer{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+p.textBox{
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 0.625%;
+    width: 25%;
+    opacity: 0;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px black;
+    cursor: default;
+    transition-delay: 200ms;
+    transition-timing-function: ease-in-out;
+}
+/* Show another element with + selector, elements has to placed after each other */
+#oleKirk:hover ~ p.text1 {
+    opacity: 1;
+}
+p.kirkChatBubble{
+    bottom: 10%;
+    left: 15%;
+}
+p.harryPotterBubble{
+    top: 50%;
+    left: 35%;
+}
+#empireFalcon:hover ~ p.text2{
+    opacity: 1;
+}
+p.starwarsBubble{
+    bottom: 15%;
+    right: 15%;
+}
+#spiderLogo:hover ~ p.text3{
+    opacity: 1;
+}
+p.spidermanBubble{
+    right: 30%;
+    top: 15%;
+}
+

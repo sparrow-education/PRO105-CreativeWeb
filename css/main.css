@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow: hidden;
+}
+.background {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+}
+/* Ole Kirk animation */
+.oleKirk {
+  position: absolute;
+  height: 450px;
+  width: 400px;
+  right: -100px;
+  left: 1500px;
+  top: 400px;
+  bottom: 0px;
+  z-index: 2;
+
+  animation-name: OleLego;
+  animation-iteration-count: initial;
+  animation-duration: 4s;
+  animation-delay: 1.2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  z-index: 3;
+}
+
+@keyframes OleLego {
+  from {
+    right: -220px;
+    bottom: 0;
+  }
+  to {
+    left: 800px;
+    bottom: 0;
+  }
+}
+/* The text inside the speaking bubble */
+.textSpeakingBubble {
+  position: relative;
+  color: black;
+  font-size: 14px;
+  top: 320px;
+  bottom: 200px;
+  left: 1075px;
+  right: 100px;
+  z-index: 3;
+
+  animation-name: TextSpeakingBubble;
+  animation-iteration-count: initial;
+  animation-delay: 0s;
+  animation-duration: 7s;
+  animation-timing-function: ease-in;
+}
+/* Using opacity to make a fade in effect*/
+@keyframes TextSpeakingBubble {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Animation of the speaking bubble*/
+.speakingBubble {
+  position: absolute;
+  height: 200px;
+  width: 350px;
+  top: 300px;
+  bottom: 200px;
+  left: 1050px;
+  right: 100px;
+  z-index: 2;
+
+  animation-name: SpeakingBubble;
+  animation-iteration-count: initial;
+  animation-delay: 0s;
+  animation-duration: 6s;
+  animation-timing-function: ease-in;
+}
+/* Using opacity to make a fade in effect*/
+@keyframes SpeakingBubble {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Animation of the earth picture*/
+.earth {
+  position: absolute;
+  width: 70%;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  animation-name: RotateEarth;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+}
+/* Transform to make the Earth bounce*/
+@keyframes RotateEarth {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(-53%);
+  }
+}
+
+/* Animation of lego-astronaut in the background*/
+@keyframes FloatingLego {
+  from {
+    left: -220px;
+    top: 0;
+  }
+  to {
+    left: 1500px;
+    top: 500px;
+  }
+}
+/* Animation of the floating astronaut*/
+.astronaut {
+  width: 100px;
+  height: 100px;
+  z-index: 0;
+  position: absolute;
+  left: -220px;
+  top: 0;
+
+  animation-name: FloatingLego;
+  animation-iteration-count: 1;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+  animation-timing-function: linear;
+  z-index: 1;
+}
+/* Stars*/
+section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  animation: animateBg 50s linear infinite;
+}
+/* The rest of the page is animation of the stars*/
+
+/* Using scale to show more of the stars*/
+@keyframes animateBg {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  animation: animate 3s linear infinite;
+}
+span {
+  position: absolute;
+  top: 50%;
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, #fff, transparent);
+}
+/* Rotation to show how far down the stars are going*/
+@keyframes animate {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
+/* all the 10 stars*/
+span:nth-child(1) {
+  top: 0;
+  right: 0;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 1s;
+}
+span:nth-child(2) {
+  top: 0;
+  right: 80px;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 3s;
+}
+span:nth-child(3) {
+  top: 80px;
+  right: 80px;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 2s;
+}
+span:nth-child(4) {
+  top: 0px;
+  right: 100px;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 1.5s;
+}
+span:nth-child(5) {
+  top: 0px;
+  right: 400px;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 2.5s;
+}
+span:nth-child(6) {
+  top: 0px;
+  right: 600px;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 3s;
+}
+span:nth-child(7) {
+  top: 300px;
+  right: 0px;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 1.75s;
+}
+span:nth-child(8) {
+  top: 0px;
+  right: 700px;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 1.25s;
+}
+span:nth-child(9) {
+  top: 0px;
+  right: 1000px;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 2.25s;
+}
+span:nth-child(10) {
+  top: 0px;
+  right: 450px;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 2.25s;
+}

@@ -1,0 +1,384 @@
+body {
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    border: 10px solid black;
+}
+
+/* Background image */
+.backgroundImage {
+    width: 100%;
+}
+
+/* Navigation buttons */
+.upArrow {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 4.5%;
+}
+
+.downArrow {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    width: 4.5%;
+}
+
+/* Images % Animation */
+#birdsImg {
+    position: absolute;
+    width: 20%;
+    top: 15%;
+    left: 30%;
+
+    animation-name: birdsAnim, fadeAnim, opacityAnim;
+    animation-duration: 500ms, 20s, 20s;
+    animation-iteration-count: infinite, 1, infinite;
+}
+
+#planeImg {
+    position: absolute;
+    width: 5%;
+    top: 8%;
+    right: 5%;
+
+    animation-name: planeAnim;
+    animation-fill-mode: forwards;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+#policeImg {
+    position: absolute;
+    width: 5%;
+    top: 50%;
+    left: 30%;
+
+    animation-name: policeAnim, policeOpacity;
+    animation-duration: 5s, 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s, 5s;   
+}
+
+#policecarImg {
+    position: absolute;
+    width: 15%;
+    top: 50%;
+    left: 40%;
+    transform: rotate(15deg);
+
+    animation-name: policeDrive, policeMotor;
+    animation-duration: 7s, 250ms;
+    animation-fill-mode: forwards;
+    animation-delay: 7s;
+    animation-iteration-count: infinite, infinite ;
+}
+
+#oleKirkImg{
+    position: absolute;
+    width: 10%;
+    bottom: 15%;
+    left: 15%;
+}
+
+#oleHouse{
+    position: absolute;
+    width: 20%;
+    bottom: 30%;
+    right: 10%;
+}
+
+#xmasTree{
+    position: absolute;
+    width: 18%;
+    bottom: 30%;
+    right: 25%;
+
+    animation-name: xmasTreeAnim;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.cloudImg{
+    position: absolute;
+    left: -50%;
+    width: 5%;
+
+    animation-name: cloudMoveAnim;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#cloudImg1{
+    animation-name: cloudMoveAnim;
+    animation-delay: 5s;
+}
+#cloudImg2{
+    animation-name: cloudMoveAnim;
+    animation-delay: 2s;
+}
+#cloudImg3{
+    animation-name: cloudMoveAnim;
+    animation-delay: 4s;
+}
+#cloudImg4{
+    animation-name: cloudMoveAnim;
+    animation-delay: 7s;
+}
+#cloudImg5{
+    animation-name: cloudMoveAnim;
+    animation-delay: 8s;
+}
+
+#treeImg{
+    position: absolute;
+    width: 5%;
+    bottom: 34%;
+    right: 5%;
+
+    animation-name: treeMoveAnim;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+#duckImg{
+    position: absolute;
+    width: 5%;
+    bottom: 18%;
+    left: 50%;
+
+    animation-name: duckImgAnim;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+/* Text boxes */
+#duckText {
+    position: absolute;
+    bottom: -10%;
+    right: 55%;
+    width: 20%;
+    background-color: whitesmoke;
+    color:black;
+    opacity: 0;
+    transform: translate(100%,-100%);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: 0.625%;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px black;
+}
+
+#kirkText {
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+    width: 15%;
+    background-color: whitesmoke;
+    color:black;
+    opacity: 0%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: 0.625%;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px black;
+}
+
+#houseText {
+    position: absolute;
+    bottom: 30%;
+    right: 10%;
+    width: 20%;
+    background-color: whitesmoke;
+    color:black;
+    opacity: 0%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: 0.625%;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px black;
+}
+
+#treeText {
+    position: absolute;
+    bottom: 30%;
+    right: 25%;
+    width: 20%;
+    background-color: whitesmoke;
+    color:black;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: 0.625%;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px black;
+}
+
+/* :hover */
+#duckImg:hover + #duckText{
+    opacity: 100;
+}
+
+#kirkText:hover{
+    opacity: 100%;
+}
+
+#houseText:hover{
+    opacity: 100%;
+}
+
+#treeText:hover{
+    opacity: 100%;
+}
+
+/* Keyframes */
+@keyframes opacityBox {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes planeAnim {
+    0% {
+        right: 1%;
+    }
+
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes birdsAnim {
+    0% {
+        top: 8%;
+    }
+
+    100% {
+        top: 9%;
+    }
+}
+
+@keyframes fadeAnim {
+    0% {
+        width: 20%;
+    }
+
+    100% {
+        width: 10%;
+    }
+}
+
+@keyframes opacityAnim {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+@keyframes policeAnim {
+    0% {
+        left: 30%;
+    }
+
+    100% {
+        left: 45%;
+    }
+}
+
+@keyframes policeOpacity {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+@keyframes policeDrive {
+    0% {
+        left: 40%;
+    }
+
+    100% {
+        left: -50%;
+    }
+}
+
+@keyframes policeMotor {
+    0% {
+        top: 50%;
+    }
+
+    50% {
+        top: 51%;
+    }
+}
+
+@keyframes cloudMoveAnim{
+    0% {
+        left: -50%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes treeMoveAnim{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(103%);
+    }
+}
+
+@keyframes duckImgAnim{
+    0%{
+        transform: translateY(100%);
+    }
+
+    100%{
+        transform: translateY(110%);
+    }
+}
+
+@keyframes xmasTreeAnim{
+    0%{
+        transform: translateY(0%);
+    }
+
+    100%{
+        transform: translateY(10%);
+    }
+}

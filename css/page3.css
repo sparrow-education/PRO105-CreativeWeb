@@ -1,0 +1,304 @@
+.mainWrapper {
+    position: relative;
+    border: 10px solid whitesmoke;
+    height: 100vh;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.backgroundImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(#6e3cbc, #7267cb);
+}
+
+.interactiveContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: navy 5px solid;
+}
+#stars {
+    opacity: 0.5;
+}
+
+.buttonsWrapper {
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    width: 5%;
+    display: flex;
+    z-index: 1;
+}
+
+.buttons {
+    width: 80%;
+}
+
+#road {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    opacity: 80%;
+    width: 100%;
+    height: 60vh;
+    z-index: 1;
+}
+
+/* Kirk */
+.kirk {
+    position: absolute;
+    width: 10%;
+    left: 65%;
+    bottom: 10%;
+    z-index: 1;
+}
+
+#kirkDiv {
+    opacity: 0;
+}
+
+#kirkDiv:hover {
+    opacity: 1;
+    transition: 1s;
+}
+
+#kirkText {
+    position: absolute;
+    opacity: 0.8;
+    left: 20%;
+    bottom: 100%;
+    width: 200%;
+    background-image: linear-gradient(#98bae7, #b8e4f0);
+    border-radius: 5px;
+}
+
+/* Ferrari */
+.ferrari {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.8;
+    width: 30vw;
+    left: 30%;
+    bottom: -100%;
+    animation-name: startFerrari;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+#ferrariDiv {
+    opacity: 0;
+    top: 80%;
+}
+
+#ferrariDiv:hover {
+    opacity: 1;
+    transition: 1s;
+}
+
+#ferrariText {
+    position: absolute;
+    opacity: 0.8;
+    bottom: 50%;
+    right: 20%;
+    left: 20%;
+    background-image: linear-gradient(#98bae7, #b8e4f0);
+    border-radius: 5px;
+}
+
+/* Animation for ferrari */
+@keyframes startFerrari {
+    0% {
+        bottom: -100%;
+        left: -100%;
+        transform: rotate(-50deg);
+    }
+
+    100% {
+        bottom: 10%;
+        left: 30%;
+    }
+}
+
+/* Train */
+.train {
+    position: absolute;
+    z-index: 0;
+    width: 20%;
+    height: 5%;
+    bottom: 90%;
+    right: -100%;
+    animation-name: flyBy;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-delay: 30s;
+}
+
+#trainDiv {
+    opacity: 0;
+}
+
+#trainDiv:hover {
+    opacity: 1;
+    transition-duration: 1s;
+}
+
+#trainText {
+    position: absolute;
+    opacity: 0.8;
+    left: -50%;
+    top: -100%;
+    width: 250%;
+    background-image: linear-gradient(#98bae7, #b8e4f0);
+    border-radius: 5px;
+}
+
+/* Animation for train */
+@keyframes flyBy {
+    0% {
+        right: -100%;
+    }
+
+    5% {
+        right: 20%;
+    }
+
+    95% {
+        right: 20%;
+    }
+
+    100% {
+        right: 120%;
+    }
+}
+
+/* Fun facts */
+#blockDiv {
+    position: absolute;
+    bottom: 30%;
+    z-index: 1;
+    left: 1%;
+}
+
+#blockText {
+    position: relative;
+    text-align: center;
+}
+
+.block {
+    width: 22vw;
+    height: 5vw;
+    opacity: 0.7;
+    background-image: linear-gradient(#98bae7, #b8e4f0);
+    border-radius: 50%;
+    margin-top: 5%;
+}
+
+.fact {
+    position: relative;
+    text-align: center;
+    top: 30%;
+    opacity: 0;
+}
+
+.fact:hover {
+    opacity: 1;
+    transition: 1s;
+}
+
+/* Colosseum */
+#colosseum {
+    position: absolute;
+    width: 45%;
+    left: 60%;
+    bottom: 30%;
+    z-index: 0;
+    animation-name: colosseumFloat;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#colosseumDiv {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    left: 70%;
+    bottom: 40%;
+    opacity: 0;
+    z-index: 1;
+}
+
+#colosseumDiv:hover {
+    opacity: 1;
+    transition-duration: 1s;
+}
+
+#colosseumText {
+    position: absolute;
+    top: -20%;
+    background-image: linear-gradient(#98bae7, #b8e4f0);
+    opacity: 0.8;
+    border-radius: 5px;
+}
+
+@keyframes colosseumFloat {
+    from {
+        transform: translateY(1%);
+    }
+    to {
+        transform: translateY(-1%);
+    }
+}
+
+/* Castle */
+#castle {
+    position: absolute;
+    height: 50vh;
+    width: 20vw;
+    left: 40%;
+    bottom: 50%;
+    animation-name: castleFloat;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
+
+#castleDiv {
+    position: absolute;
+    width: 20%;
+    height: 30%;
+    top: 10%;
+    left: 30%;
+    opacity: 0;
+}
+
+#castleDiv:hover {
+    opacity: 1;
+    transition-duration: 1s;
+}
+
+#castleText {
+    position: absolute;
+    background-image: linear-gradient(#98bae7, #b8e4f0);
+    opacity: 0.8;
+    border-radius: 5px;
+    top: -20%;
+}
+
+@keyframes castleFloat {
+    from {
+        transform: translateY(1%) translateX(-50%);
+    }
+    to {
+        transform: translateY(-1%) translateX(-50%);
+    }
+}
